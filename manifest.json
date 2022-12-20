@@ -1,0 +1,21 @@
+{
+  "name": "Instagram Scraper",
+  "version": "0.0.1",
+  "description": "Allows the user to scrape the info from an Instagram profile",
+  "permissions": ["tabs"],
+  "host_permissions": ["https://*.instagram.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Instagram Scraper"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.instagram.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "manifest_version": 3
+}
